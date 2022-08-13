@@ -16,7 +16,7 @@ intellij {
     version.set("2022.2")
     type.set("IU") // Target IDE Platform
 
-    plugins.set(listOf(/* Plugin Dependencies */))
+    plugins.set(listOf("JavaScriptLanguage"))
 }
 
 tasks {
