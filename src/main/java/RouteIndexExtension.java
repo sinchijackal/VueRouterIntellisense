@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.Map;
 
 public class RouteIndexExtension extends FileBasedIndexExtension<String, Void> {
-    public static final ID<String, Void> KEY = ID.create("me.kapien.vue_routes");
+    public static final ID<String, Void> KEY = ID.create("me.netjack.vue_routes");
 
     @Override
     public @NotNull ID<String, Void> getName() {

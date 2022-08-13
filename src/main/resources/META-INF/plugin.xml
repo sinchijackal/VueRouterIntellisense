@@ -16,15 +16,36 @@
     <description><![CDATA[
     Vue Router Helper intellisense.<br>
     <em>Autocomplete from routes</em>
+    <h2>Feature</h2>
+    <ul>
+    <li>Support indexing in path including route</li>
+    <li>Support Goto route definition</li>
+    <li>Suggest name from parent for route</li>
+    </ul>
+
+    <p>Plugin will index all name property of RouteConfig Object in file contain "route" and have prefix ".ts".</p>
+    <p>Plugin will suggest in object that has name property.</p>
   ]]></description>
+
+    <change-notes><![CDATA[
+    <ul>
+        <li>Compatibility with 2022.2</li>
+    </ul>
+    <p></p>
+    ]]>
+    </change-notes>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>JavaScript</depends>
     <depends>com.intellij.modules.platform</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-
+        <completion.contributor order="first" language="TypeScript"
+                                implementationClass="VueRouteCompletionContributor"/>
+        <fileBasedIndex implementation="RouteIndexExtension"/>
+        <gotoDeclarationHandler order="first" implementation="VueRouterGoToHandler"/>
     </extensions>
 </idea-plugin>
